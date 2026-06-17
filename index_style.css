@@ -107,7 +107,7 @@ nav a.active {
 
 /* Hero Section */
 .hero {
- background:https://voice-in-silence-api.onrender.com/media/posts/magnific__man-sitting-alone-on-a-bench-contemplative-express__95888.png
+ background:url("https://voice-in-silence-api.onrender.com/media/posts/magnific__man-sitting-alone-on-a-bench-contemplative-express__95888.png")
 center/cover no-repeat;
   color: white;
   text-align: center;
