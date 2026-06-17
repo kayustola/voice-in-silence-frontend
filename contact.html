@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | Voice in Silence</title>
+  <link rel="stylesheet" href="contact_style.css">
+  <link rel="icon" type="image/png" href="WhatsApp Image 2025-04-22 at 17.28.25_fcbcd486.jpg"">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1 class="logo">Voice in <span class="silence">Silence</span></h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="articles.html">Articles</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="contact-section">
+    <div class="container split-contact">
+
+      <div class="contact-info">
+        <h2>Let’s Connect</h2>
+        <p>Your message matters. Whether it’s a word of encouragement, a question, or a story — I’m here to listen.</p>
+
+        <p><strong>Email:</strong> <a href="mailto:voiceinsilence07@gmail.com">
+              voiceinsilence07@gmail.com
+        </a></p>
+      <p><strong>Instagram:</strong> <a href="https://instagram.com/voiceinsilence2025" target="_blank">@voiceinsilence2025</a></p>
+         <p><strong>Facebook:</strong> <a href="https://www.facebook.com/voiceinsilence07/about/" target="_blank">Voice in Silence</a></p>
+        <p><strong>YouTube:</strong> <a href="https://www.youtube.com/@voiceinsilence07" target="_blank">Voice in Silence</a></p>
+        <a href="https://wa.me/2349135383367?text=Hi%20there%2C%20I%20just%20visited%20your%20Voice%20in%20Silence%20blog!"target=_blank" rel="noopener noreferrer" style="
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+">
+  Chat on WhatsApp
+</a>
+      </div>
+
+       <form id="contactForm" class="contact-form">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea id="message" placeholder="Your Message..." required></textarea>
+        <button type="submit">Send Message</button>
+        </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Voice in Silence. All rights reserved.</p>
+  </footer>
+
+  <script>
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  const res = await fetch("http://127.0.0.1:8000/api/contact/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      name,
+      email,
+      message
+    })
+  });
+
+  if (res.ok) {
+    alert("Message sent successfully!");
+    document.getElementById("contactForm").reset();
+  } else {
+    alert("Failed to send message.");
+  }
+});
+</script>
+</body>
+</html>
