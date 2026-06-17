@@ -69,7 +69,7 @@ if (slug) {
     const name = document.querySelector("#name").value;
     const message = document.querySelector("#message").value;
 
-    await fetch("https://voice-in-silence-api.onrender.com/api/comments/" {
+    await fetch("https://voice-in-silence-api.onrender.com/api/comments/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
