@@ -54,7 +54,7 @@ scrollBtn.addEventListener("click", () => {
 
 async function loadPosts() {
     try {
-        const response = await fetch("https://voice-in-silence-api.onrender.com/posts/");
+        const response = await fetch("https://voice-in-silence-api.onrender.com/api/posts/");
         const posts = await response.json();
 
         const container = document.querySelector(".cards");

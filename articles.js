@@ -4,7 +4,7 @@ const container = document.querySelector(".articles .container");
 async function loadPosts() {
   const slug = new URLSearchParams(window.location.search).get("slug");
 
-  const res = await fetch("https://voice-in-silence-api.onrender.com/posts/");
+  const res = await fetch("https://voice-in-silence-api.onrender.com/api/posts/");
   const posts = await res.json();
   allPosts = posts;
 
@@ -15,7 +15,7 @@ if (slug) {
   const post = posts.find(p => p.slug === slug);
   if (!post) return;
 
-  const commentsRes = await fetch(`https://voice-in-silence-api.onrender.com/comments/?post=${post.id}`);
+  const commentsRes = await fetch(`https://voice-in-silence-api.onrender.com/api/comments/?post=${post.id}`);
   const comments = await commentsRes.json();
 
   container.innerHTML = `
@@ -69,7 +69,7 @@ if (slug) {
     const name = document.querySelector("#name").value;
     const message = document.querySelector("#message").value;
 
-    await fetch("https://voice-in-silence-api.onrender.com/comments/", {
+    await fetch("https://voice-in-silence-api.onrender.com/api/comments/" {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -131,7 +131,7 @@ function renderComments(comments) {
 // DELETE COMMENT
 // ======================
 async function deleteComment(id) {
-  await fetch(`https://voice-in-silence-api.onrender.com/comments/${id}/delete/`, {
+  await fetch(`https://voice-in-silence-api.onrender.com/api/comments/${id}/delete/`, {
     method: "DELETE"
   });
 
@@ -147,7 +147,7 @@ async function editComment(id, oldMessage) {
 
   if (!newMessage) return;
 
-  await fetch(`https://voice-in-silence-api.onrender.com/comments/${id}/edit/`, {
+  await fetch(`https://voice-in-silence-api.onrender.com/api/comments/${id}/edit/`, {
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
