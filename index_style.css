@@ -107,7 +107,7 @@ nav a.active {
 
 /* Hero Section */
 .hero {
- background: url("http://127.0.0.1:8000/media/posts/magnific__man-sitting-alone-on-a-bench-contemplative-express__95888.png")
+ background: url(https://voice-in-silence-api.onrender.com/api/media/posts/magnific__man-sitting-alone-on-a-bench-contemplative-express__95888.png")
 center/cover no-repeat;
   color: white;
   text-align: center;
