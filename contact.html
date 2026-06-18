@@ -69,7 +69,7 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
   const email = document.getElementById("email").value;
   const message = document.getElementById("message").value;
 
-  const res = await fetch("https://voice-in-silence-api.onrender.com/contact/", {
+  const res = await fetch("https://voice-in-silence-api.onrender.com/api/contact/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
